@@ -23,7 +23,7 @@ public class TeaController {
     public String toTeaList(ModelMap map){
         List<TTea> tTeaList=teaService.selectAllTeacher();
         map.put("tTeaList",tTeaList);
-        return "teaList";
+        return "tea/teaList";
     }
 
 

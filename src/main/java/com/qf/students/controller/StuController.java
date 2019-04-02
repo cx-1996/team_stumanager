@@ -16,7 +16,7 @@ public class StuController {
     private StuService stuService;
 
 
-    @RequestMapping("/stulist")
+    @RequestMapping("/tostulist")
     public String stuList(ModelMap map){
 
         List stuList = stuService.getStuList();

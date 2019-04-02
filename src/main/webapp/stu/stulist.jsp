@@ -11,7 +11,7 @@
     <title>学生管理</title>
 </head>
 <body>
-
+<base href="<%=request.getContextPath()+"/"%>">
 <table>
     <th>
         <td>编号</td>
