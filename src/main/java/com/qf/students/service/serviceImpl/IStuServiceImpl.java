@@ -6,11 +6,18 @@ import com.qf.students.service.StuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class IStuServiceImpl implements StuService {
 
     @Autowired
     private TStuMapper stuMapper;
+
+    @Override
+    public List getStuList() {
+        return stuMapper.getStuList();
+    }
 
     public int deleteByPrimaryKey(Integer sid) {
         return stuMapper.deleteByPrimaryKey(sid);

@@ -2,7 +2,12 @@ package com.qf.students.mapper;
 
 import com.qf.students.entity.TStu;
 
+import java.util.List;
+
 public interface TStuMapper {
+
+    List getStuList();
+
     int deleteByPrimaryKey(Integer sid);
 
     int insert(TStu record);

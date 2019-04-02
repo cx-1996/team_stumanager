@@ -55,4 +55,22 @@
     set sname = #{sname,jdbcType=VARCHAR}
     where sid = #{sid,jdbcType=INTEGER}
   </update>
+  <select id="getStuList" parameterType="TStu" resultMap="BaseResultMap">
+    select * from t_stu
+  </select>
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

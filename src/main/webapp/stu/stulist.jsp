@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>学生管理</title>
 </head>
 <body>
+
+<table>
+    <th>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>操作</td>
+    </th>
+</table>
 
 </body>
 </html>
