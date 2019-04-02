@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.oa.mapper.TTeaMapper">
+  <resultMap id="BaseResultMap" type="com.qf.oa.entity.TTea">
+    <id column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="tname" jdbcType="VARCHAR" property="tname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    tid, tname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_tea
+    where tid = #{tid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_tea
+    where tid = #{tid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qf.oa.entity.TTea">
+    insert into t_tea (tid, tname)
+    values (#{tid,jdbcType=INTEGER}, #{tname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.oa.entity.TTea">
+    insert into t_tea
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tid != null">
+        tid,
+      </if>
+      <if test="tname != null">
+        tname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tid != null">
+        #{tid,jdbcType=INTEGER},
+      </if>
+      <if test="tname != null">
+        #{tname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.TTea">
+    update t_tea
+    <set>
+      <if test="tname != null">
+        tname = #{tname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.TTea">
+    update t_tea
+    set tname = #{tname,jdbcType=VARCHAR}
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+
+  <!--查询所有老师信息-->
+
+  <select id="selectAllTeacher" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from t_tea
+  </select>
+
+
+
+
+
+
+</mapper>
