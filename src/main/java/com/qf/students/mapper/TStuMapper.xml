@@ -18,11 +18,11 @@
     delete from t_stu
     where sid = #{sid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qf.oa.entity.TStu">
+  <insert id="insert" parameterType="com.qf.students.entity.TStu">
     insert into t_stu (sid, sname)
     values (#{sid,jdbcType=INTEGER}, #{sname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.qf.oa.entity.TStu">
+  <insert id="insertSelective" parameterType="com.qf.students.entity.TStu">
     insert into t_stu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="sid != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.TStu">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.students.entity.TStu">
     update t_stu
     <set>
       <if test="sname != null">
@@ -50,7 +50,7 @@
     </set>
     where sid = #{sid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.TStu">
+  <update id="updateByPrimaryKey" parameterType="com.qf.students.entity.TStu">
     update t_stu
     set sname = #{sname,jdbcType=VARCHAR}
     where sid = #{sid,jdbcType=INTEGER}

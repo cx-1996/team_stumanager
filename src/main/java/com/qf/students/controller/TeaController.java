@@ -1,7 +1,7 @@
 package com.qf.students.controller;
 
 import com.qf.students.entity.TTea;
-import com.qf.students.service.serviceImpl.TeaServiceImpl;
+import com.qf.students.service.TeaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/teacher")
 public class TeaController {
     @Autowired
-    private TeaServiceImpl teaService;
+    private TeaService teaService;
 
     /**
      * 展示老师页面

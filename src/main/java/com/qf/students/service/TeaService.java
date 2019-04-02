@@ -2,6 +2,8 @@ package com.qf.students.service;
 
 import com.qf.students.entity.TTea;
 
+import java.util.List;
+
 public interface TeaService {
     int deleteByPrimaryKey(Integer tid);
 
@@ -14,6 +16,8 @@ public interface TeaService {
     int updateByPrimaryKeySelective(TTea record);
 
     int updateByPrimaryKey(TTea record);
+
+    List<TTea> selectAllTeacher();
 
 
 }

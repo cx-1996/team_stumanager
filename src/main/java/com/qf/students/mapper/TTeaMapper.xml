@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.qf.oa.mapper.TTeaMapper">
-  <resultMap id="BaseResultMap" type="com.qf.oa.entity.TTea">
+<mapper namespace="com.qf.students.mapper.TTeaMapper">
+  <resultMap id="BaseResultMap" type="com.qf.students.entity.TTea">
     <id column="tid" jdbcType="INTEGER" property="tid" />
     <result column="tname" jdbcType="VARCHAR" property="tname" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from t_tea
     where tid = #{tid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qf.oa.entity.TTea">
+  <insert id="insert" parameterType="com.qf.students.entity.TTea">
     insert into t_tea (tid, tname)
     values (#{tid,jdbcType=INTEGER}, #{tname,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.qf.oa.entity.TTea">
+  <insert id="insertSelective" parameterType="com.qf.students.entity.TTea">
     insert into t_tea
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="tid != null">
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qf.oa.entity.TTea">
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.students.entity.TTea">
     update t_tea
     <set>
       <if test="tname != null">
@@ -50,7 +50,7 @@
     </set>
     where tid = #{tid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.qf.oa.entity.TTea">
+  <update id="updateByPrimaryKey" parameterType="com.qf.students.entity.TTea">
     update t_tea
     set tname = #{tname,jdbcType=VARCHAR}
     where tid = #{tid,jdbcType=INTEGER}
